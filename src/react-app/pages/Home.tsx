@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { Play, Sparkles, Leaf, Calendar, Check, ArrowRight } from 'lucide-react';
 import NutritionCalculator from '../components/NutritionCalculator';
 import VideoFeed from '../components/VideoFeed';
@@ -8,6 +8,8 @@ import ProductCard from '../components/ProductCard'
 import { products } from '../../data/products'
 
 export default function Home() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap';
@@ -220,7 +222,7 @@ export default function Home() {
                 {products
                   .filter(p => p.servings === 1)
                   .map(product => (
-                    <ProductCard key={product.id} product={product} onAdd={() => {/* handle add */}} />
+                    <ProductCard key={product.id} product={product} onAdd={() => navigate('/subscription')} />
                   ))
                 }
               </div>
