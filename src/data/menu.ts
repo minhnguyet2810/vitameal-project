@@ -256,6 +256,19 @@ export const generate3DayMenu = (): DayMenu[] => {
   return menus;
 };
 
+export const generate1DayMenu = (): DayMenu[] => {
+  const today = new Date();
+  return [
+    {
+      day: 1,
+      date: today.toLocaleDateString('vi-VN', { weekday: 'long', day: 'numeric', month: 'long' }),
+      breakfast: breakfasts[0],
+      lunch: lunches[0],
+      dinner: dinners[0]
+    }
+  ];
+};
+
 export const generate7DayMenu = (): DayMenu[] => {
   const today = new Date();
   const menus: DayMenu[] = [];
