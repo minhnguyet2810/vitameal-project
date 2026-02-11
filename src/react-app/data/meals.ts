@@ -295,7 +295,7 @@ export const meals: Meal[] = [
     name: 'Cơm bát cá hồi áp chảo',
     description: 'Cá hồi áp chảo tươi ăn kèm quinoa, bơ và rau xanh',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-grilled-salmon-dish-4365-large.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1485704686097-ed47f7263ca4?w=800&auto=format&fit=crop',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&auto=format&fit=crop',
     category: 'Healthy',
     nutrition: {
       calories: 520,
@@ -327,7 +327,7 @@ export const meals: Meal[] = [
     name: 'Bát sinh tố ít đường',
     description: 'Sinh tố ít đường với quả mọng và hạt chia',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pouring-milk-into-a-bowl-of-cereal-6934-large.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=800&auto=format&fit=crop',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1623428187429-8ae658dc80c0?w=800&auto=format&fit=crop',
     category: 'Diabetes-Friendly',
     nutrition: {
       calories: 240,
