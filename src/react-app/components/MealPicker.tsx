@@ -41,7 +41,7 @@ export default function MealPicker({ menu, onMenuChange, onConfirm, onCancel }: 
   );
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+    <div className={`bg-white rounded-3xl shadow-2xl ${activeSlot ? 'overflow-visible' : 'overflow-hidden'}`}>
       <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 p-6 text-white">
         <h2 className="text-2xl font-bold mb-1" style={{ fontFamily: 'Be Vietnam Pro, sans-serif' }}>
           Chọn Món Ăn Theo Ý Bạn
@@ -51,9 +51,9 @@ export default function MealPicker({ menu, onMenuChange, onConfirm, onCancel }: 
         </p>
       </div>
 
-      <div className="p-6 space-y-6 max-h-[60vh] overflow-y-auto">
+      <div className={`p-6 space-y-6 ${activeSlot ? 'overflow-visible' : 'max-h-[60vh] overflow-y-auto'}`}>
         {menu.map((day, dayIdx) => (
-          <div key={day.day} className="border border-gray-200 rounded-2xl overflow-hidden">
+          <div key={day.day} className="border border-gray-200 rounded-2xl overflow-visible">
             <div className="bg-gray-50 px-4 py-2 font-semibold text-gray-800" style={{ fontFamily: 'Be Vietnam Pro, sans-serif' }}>
               Ngày {day.day} — {day.date}
             </div>
@@ -82,7 +82,7 @@ export default function MealPicker({ menu, onMenuChange, onConfirm, onCancel }: 
                     </button>
 
                     {isActive && (
-                      <div className="absolute top-full left-0 right-0 mt-1 z-20 bg-white border-2 border-emerald-500 rounded-xl shadow-xl p-4 max-h-64 overflow-y-auto">
+                      <div className="absolute top-full left-0 right-0 mt-1 z-[100] bg-white border-2 border-emerald-500 rounded-xl shadow-2xl p-4 max-h-80 overflow-y-auto">
                         <p className="text-xs font-semibold text-gray-500 mb-2">Chọn món — {labels[type]}</p>
                         <div className="space-y-1">
                           {getMealList(type).map((m) => (
@@ -97,6 +97,13 @@ export default function MealPicker({ menu, onMenuChange, onConfirm, onCancel }: 
                             </button>
                           ))}
                         </div>
+                        <button
+                          type="button"
+                          onClick={() => setActiveSlot(null)}
+                          className="mt-2 w-full py-2 text-sm text-gray-500 hover:text-gray-700"
+                        >
+                          Đóng
+                        </button>
                       </div>
                     )}
                   </div>
