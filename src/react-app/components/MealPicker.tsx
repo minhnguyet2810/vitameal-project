@@ -32,10 +32,10 @@ export default function MealPicker({ menu, onMenuChange, onConfirm, onCancel }: 
     <div key={meal.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-emerald-50">
       <img src={meal.imageUrl} alt="" className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
       <div className="flex-1 min-w-0">
-        <p className="font-semibold text-gray-900 truncate" style={{ fontFamily: 'Be Vietnam Pro, sans-serif' }}>
+        <p className="font-semibold text-gray-900 text-sm leading-snug break-words" style={{ fontFamily: 'Be Vietnam Pro, sans-serif' }}>
           {meal.name}
         </p>
-        <p className="text-xs text-gray-500">{meal.calories} kcal · {meal.protein}g đạm</p>
+        <p className="text-xs text-gray-500 mt-0.5">{meal.calories} kcal · {meal.protein}g đạm</p>
       </div>
     </div>
   );
@@ -82,7 +82,7 @@ export default function MealPicker({ menu, onMenuChange, onConfirm, onCancel }: 
                     </button>
 
                     {isActive && (
-                      <div className="absolute top-full left-0 right-0 mt-1 z-[100] bg-white border-2 border-emerald-500 rounded-xl shadow-2xl p-4 max-h-80 overflow-y-auto">
+                      <div className="absolute top-full left-0 right-0 mt-1 z-[100] min-w-[280px] bg-white border-2 border-emerald-500 rounded-xl shadow-2xl p-4 max-h-80 overflow-y-auto">
                         <p className="text-xs font-semibold text-gray-500 mb-2">Chọn món — {labels[type]}</p>
                         <div className="space-y-1">
                           {getMealList(type).map((m) => (
