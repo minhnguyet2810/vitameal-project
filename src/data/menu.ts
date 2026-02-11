@@ -76,7 +76,7 @@ export const breakfasts: Meal[] = [
     carbs: 40,
     fat: 9,
     description: 'Cháo yến mạch mặn kèm trứng lòng đào và rau thơm',
-    imageUrl: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400'
   },
   {
     id: 'b7',

@@ -295,7 +295,7 @@ export const meals: Meal[] = [
     name: 'Cơm bát cá hồi áp chảo',
     description: 'Cá hồi áp chảo tươi ăn kèm quinoa, bơ và rau xanh',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-grilled-salmon-dish-4365-large.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&auto=format&fit=crop',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1485704686097-ed47f7263ca4?w=800&auto=format&fit=crop',
     category: 'Healthy',
     nutrition: {
       calories: 520,
@@ -359,7 +359,7 @@ export const meals: Meal[] = [
     name: 'Bữa sáng Keto: Bacon & Trứng',
     description: 'Bacon giòn kèm trứng ốp và bơ',
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-breakfast-with-eggs-and-bacon-4368-large.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&auto=format&fit=crop',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=800&auto=format&fit=crop',
     category: 'Keto',
     nutrition: {
       calories: 450,
