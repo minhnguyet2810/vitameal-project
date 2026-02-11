@@ -4,21 +4,24 @@ import react from "@vitejs/plugin-react";
 import { cloudflare } from "@cloudflare/vite-plugin";
 import { mochaPlugins } from "@getmocha/vite-plugins";
 
-// Dùng function để tách cấu hình dev / build
 export default defineConfig(({ command }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const basePlugins = [...mochaPlugins(process.env as any), react()];
 
-  // Cloudflare plugin chỉ cần cho build / deploy, không chạy ở dev
-  const plugins =
-    command === "serve" ? basePlugins : [...basePlugins, cloudflare()];
+  // Bỏ Cloudflare plugin khi dev hoặc khi build trên Vercel (tránh 404 do build lỗi)
+  const useCloudflare =
+    command !== "serve" && !process.env.VERCEL;
+  const plugins = useCloudflare ? [...basePlugins, cloudflare()] : basePlugins;
 
   return {
+    root: "src/react-app",
     plugins,
     server: {
       allowedHosts: true,
     },
     build: {
+      outDir: "../../dist",
+      emptyOutDir: true,
       chunkSizeWarningLimit: 5000,
     },
     resolve: {
