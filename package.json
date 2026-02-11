@@ -37,10 +37,10 @@
     "wrangler": "^4.33.0"
   },
   "scripts": {
-    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "build": "vite build src/react-app --outDir dist --emptyOutDir",
     "cf-typegen": "wrangler types",
     "check": "tsc && vite build && wrangler deploy --dry-run",
-    "dev": "vite",
     "knip": "knip",
     "lint": "eslint ."
   }
