@@ -1,17 +1,12 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { cloudflare } from "@cloudflare/vite-plugin";
 import { mochaPlugins } from "@getmocha/vite-plugins";
 
-export default defineConfig(({ command }) => {
+// Không dùng Cloudflare plugin trong Vite để build luôn ra static (Vercel/Netlify ok)
+export default defineConfig(() => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const basePlugins = [...mochaPlugins(process.env as any), react()];
-
-  // Bỏ Cloudflare plugin khi dev hoặc khi build trên Vercel (tránh 404 do build lỗi)
-  const useCloudflare =
-    command !== "serve" && !process.env.VERCEL;
-  const plugins = useCloudflare ? [...basePlugins, cloudflare()] : basePlugins;
+  const plugins = [...mochaPlugins(process.env as any), react()];
 
   return {
     root: "src/react-app",
